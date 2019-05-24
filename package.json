@@ -1,0 +1,36 @@
+{
+  "name": "hubot-engine",
+  "version": "0.0.1",
+  "description": "Hubot wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo ':-('",
+    "lint": "eslint . --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seven48/hubot-engine.git"
+  },
+  "keywords": [
+    "hubot",
+    "rocket",
+    "chat"
+  ],
+  "author": "https://github.com/BehindLoader",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seven48/hubot-engine/issues"
+  },
+  "homepage": "https://github.com/seven48/hubot-engine#readme",
+  "dependencies": {
+    "hubot-routines": "git+https://github.com/tolstoyevsky/hubot-routines.git"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-node": "9.1.0",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-standard": "4.0.0"
+  }
+}
