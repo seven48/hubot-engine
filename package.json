@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/seven48/hubot-engine#readme",
   "dependencies": {
-    "hubot-routines": "git+https://github.com/tolstoyevsky/hubot-routines.git"
+    "hubot-routines": "git+https://github.com/tolstoyevsky/hubot-routines.git#feature/add-checking-permission-function"
   },
   "devDependencies": {
     "eslint": "5.16.0",

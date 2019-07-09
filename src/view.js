@@ -11,7 +11,8 @@ class AbstractView {
       app: null,
       wrongAppMessage: 'Ты сейчас работаешь с другой командой. Сначала закончи работу с ней.',
       admin: false,
-      accessDeniedMsg: 'У тебя недостаточно прав для этой команды :rolling_eyes:'
+      accessDeniedMsg: 'У тебя недостаточно прав для этой команды :rolling_eyes:',
+      permissions: []
     }
 
     this.init(this.options)
@@ -43,6 +44,24 @@ class AbstractView {
 
     if (this.options.admin) {
       if (!await routines.isAdmin(this.robot, this.user.name)) {
+        this.msg.send(this.options.accessDeniedMsg)
+        return false
+      }
+    }
+
+    if (this.options.permissions.length) {
+      const { user } = await this.robot.adapter.api.get(
+        'users.info',
+        { username: this.user.name }
+      )
+
+      const hasPermissions = await routines.hasPermissions(
+        this.robot,
+        user,
+        ...this.options.permissions
+      )
+
+      if (!hasPermissions) {
         this.msg.send(this.options.accessDeniedMsg)
         return false
       }
